@@ -23,7 +23,6 @@ import fnmatch
 import os
 
 import cv2 as cv2
-import cv2face as cv2face
 import numpy as np
 
 import lib.config as config
@@ -110,11 +109,11 @@ if __name__ == '__main__':
 
     # set the choosen algorithm
     if algorithm_choice == "1":
-        model = cv2face.createLBPHFaceRecognizer()
+        model = cv2.face.createLBPHFaceRecognizer()
     elif algorithm_choice == "2":
-        model = cv2face.createFisherFaceRecognizer()
+        model = cv2.face.createFisherFaceRecognizer()
     elif algorithm_choice == "3":
-        model = cv2face.createEigenFaceRecognizer()
+        model = cv2.face.createEigenFaceRecognizer()
 
     model.train(np.asarray(faces), np.asarray(labels))
 
