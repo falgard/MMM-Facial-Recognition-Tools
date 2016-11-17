@@ -22,7 +22,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 import fnmatch
 import os
 
-import cv2
+import cv2 as cv2
+import cv2face as cv2face
 import numpy as np
 
 import lib.config as config
@@ -109,11 +110,11 @@ if __name__ == '__main__':
 
     # set the choosen algorithm
     if algorithm_choice == "1":
-        model = cv2.createLBPHFaceRecognizer()
+        model = cv2face.createLBPHFaceRecognizer()
     elif algorithm_choice == "2":
-        model = cv2.createFisherFaceRecognizer()
+        model = cv2face.createFisherFaceRecognizer()
     elif algorithm_choice == "3":
-        model = cv2.createEigenFaceRecognizer()
+        model = cv2face.createEigenFaceRecognizer()
 
     model.train(np.asarray(faces), np.asarray(labels))
 
