@@ -61,6 +61,3 @@ class OpenCVCapture(object):
                 frame = self._capture_frame
         # Return the capture image data.
         return frame
-
-    def stop(self):
-        # noop
