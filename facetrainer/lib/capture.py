@@ -60,6 +60,8 @@ def capture():
             if result is None:
                 print 'Could not detect single face!  Check the image in capture.pgm' \
                         ' to see what was captured and try again with only one face visible.'
+                filename = os.path.join(config.TRAINING_DIR , 'capture.pgm')
+                cv2.imwrite(filename, crop)
                 continue
             x, y, w, h = result
             # Crop image as close as possible to desired face aspect ratio.
